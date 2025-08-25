@@ -209,4 +209,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- Tayeb jamali - [GitHub Profile](https://github.com/yourusername](https://github.com/tjamali)
+- Tayeb jamali - [GitHub Profile](https://github.com/tjamali)
