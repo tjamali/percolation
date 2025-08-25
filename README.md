@@ -124,62 +124,11 @@ This simulator can model various physical and mathematical systems:
 - **Boundary Behavior**: Natural termination via funnel effect
 - **Path Properties**: Self-avoiding in expectation
 
-### Coordinate System
-- **Origin**: Bottom-middle edge between central hexagons
-- **X-axis**: Horizontal (increases rightward)
-- **Y-axis**: Vertical (increases upward)
-- **Hexagon Centers**: Calculated with proper honeycomb geometry
-
-## 🔧 Advanced Features
-
-### Color Matrix Representation
-```python
-# Get M×N matrix (1=gray, 0=white)
-colors = lattice.get_color_matrix()
-
-# Matrix structure:
-# - colors[0] = bottom row of lattice
-# - colors[M-1] = top row of lattice
-# - colors[:, 0] = left column (all 1s)
-# - colors[:, -1] = right column (all 0s)
-```
-
-### Custom Probability Distributions
-```python
-# Vary gray probability
-for p in [0.3, 0.5, 0.7]:
-    walker = HoneycombWalk(M=40, N=40, p=p)
-    path = walker.run()
-    # Analyze path properties vs p
-```
-
-### Reproducible Simulations
-```python
-# Fixed seed for reproducibility
-seed = 12345
-lattice = create_lattice_with_bc(M=30, N=30, p=0.5, seed=seed)
-walker = HoneycombWalk(M=30, N=30, p=0.5, seed=seed)
-```
-
-## 📁 Repository Structure
-
-```
-percolation/
-│
-├── honeycomb_lattice.ipynb    # Lattice generator with boundary conditions
-├── honeycomb_walk.ipynb       # Random walk simulator
-└── README.md                  # This file
-```
-
 ## 📦 Requirements
 
 - Python 3.6+
 - NumPy >= 1.19.0
 - Matplotlib >= 3.3.0
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
 ## 📈 Performance Considerations
 
@@ -188,20 +137,6 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 - **Coordinate Precision**: Automatic cleaning prevents drift
 - **Caching**: Lazy coloring reduces redundant calculations
 
-## 🔮 Future Enhancements
-
-- [ ] 3D honeycomb lattices
-- [ ] Multiple simultaneous walkers
-- [ ] Interactive visualization
-- [ ] GPU acceleration for large-scale simulations
-- [ ] Statistical analysis tools
-- [ ] Export to common graph formats
-
-## 📚 References
-
-1. Random Walks on Hexagonal Lattices - [relevant paper]
-2. Percolation Theory and Applications - [textbook reference]
-3. Honeycomb Lattice Geometry - [mathematical reference]
 
 ## 📄 License
 
